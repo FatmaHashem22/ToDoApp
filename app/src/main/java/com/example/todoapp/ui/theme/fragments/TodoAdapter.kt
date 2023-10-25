@@ -28,7 +28,7 @@ class TodoAdapter(var todoList : List<Todo>?, val doneColor : Int, val primaryCo
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val item = todoList?.get(position)
         holder.taskTitle.text = item?.todoName
-        holder.taskDate.text = item?.todoDescription
+        holder.taskDate.text = "  "+item?.todoDescription
         if (item?.isDone == true) {
             holder.line.setBackgroundColor(doneColor)
             holder.doneText.visibility = View.VISIBLE

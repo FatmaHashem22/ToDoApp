@@ -1,6 +1,7 @@
 package com.example.todoapp.ui.theme.fragments
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +10,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.fragment.app.Fragment
 import com.example.todoapp.R
 import com.example.todoapp.database.MyDatabase
 import com.example.todoapp.database.model.Todo
+import com.example.todoapp.ui.theme.MainActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.util.Calendar
 
@@ -68,6 +71,8 @@ class AddTodoBottomSheetFragment : BottomSheetDialogFragment() {
                     ))
             }
             dismiss()
+            pushFragment(ListFragment())
+
 
 
         }
@@ -85,5 +90,12 @@ class AddTodoBottomSheetFragment : BottomSheetDialogFragment() {
             isValid = false
         }
         return isValid
+    }
+
+    fun pushFragment(fragment: Fragment){
+        fragmentManager?.beginTransaction()
+            ?.replace(R.id.fragment_container,fragment)
+            ?.commit()
+
     }
 }

@@ -11,13 +11,13 @@ data class Todo(
     val id : Int? = null,
 
     @ColumnInfo
-    val todoName :String? = null,
+    var todoName :String? = null,
 
     @ColumnInfo
-    val todoDescription : String? = null,
+    var todoDescription : String? = null,
 
     @ColumnInfo
-    val date : Date? = null,
+    var date : Date? = null,
 
     @ColumnInfo
     var isDone : Boolean? = null

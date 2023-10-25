@@ -97,10 +97,10 @@ class ListFragment : BaseFragment() {
 
         adapter.onItemClicked = object : OnItemClicked {
             override fun onItemClick(todo: Todo) {
-                showMessage("Would you like to edit this task?",
-                    "YES",
+                showMessage("What changes would you like to make?",
+                    "Update",
                     { _, i -> updateTodo(todo) },
-                    "NO",
+                    "Mark as done",
                     { _, i -> makeTodoDone(todo) }
                 )
             }
@@ -206,8 +206,17 @@ class ListFragment : BaseFragment() {
         startActivity(intent)
     }
 
-    private fun makeTodoDone(todo: Todo){}
+    private fun makeTodoDone(todo: Todo){
+        todo.isDone = true
+        MyDatabase.getInstance(requireContext()).getTodoDao().updateTodo(todo)
+        refreshRecyclerView()
+    }
 
+    private fun refreshRecyclerView() {
+        val todos = MyDatabase.getInstance(requireContext()).getTodoDao().getTodos()
+        adapter.updateData(todos)
+        adapter.notifyDataSetChanged()
+    }
 
 
     fun checkDone() {
