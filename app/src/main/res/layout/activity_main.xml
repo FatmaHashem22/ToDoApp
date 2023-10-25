@@ -5,37 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Splash_bg"
-    tools:context=".MainActivity">
+    tools:context=".ui.theme.MainActivity"
+    android:theme="@style/Fab_Bottom_app_bar">
     
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layout_marginBottom="64dp"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/Bottom_AppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:fabCradleMargin="8dp"
-        app:fabCradleVerticalOffset="12dp"
-        app:fabCradleRoundedCornerRadius="12dp"
-        app:menu="@menu/bottom_navigation_menu">
+        style="@style/bottom_navigation_bg"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="16dp"
+        app:fabCradleVerticalOffset="16dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/home_bottom_navigation_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@drawable/background_transparent"
+            android:elevation="0dp"
+            app:itemActiveIndicatorStyle="@null"
+            android:layout_marginEnd="0dp"
             app:menu="@menu/bottom_navigation_menu"
-             />
+            />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_todo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_anchor="@+id/Bottom_AppBar"/>
     </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_todo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/ColorPrimaryBlue"
+        android:elevation="8dp"
+        android:tintMode="@color/white"
+        android:src="@drawable/add_icon"
+        app:layout_anchor="@id/Bottom_AppBar"
+        android:contentDescription="TODO" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

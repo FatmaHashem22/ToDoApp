@@ -8,11 +8,21 @@
         <item name="colorSecondary">@color/white</item>
         <item name="colorSecondaryVariant">@color/white</item>
         <item name="colorOnSecondary">@color/black</item>
-
+        <item name="colorAccent">@color/ColorPrimaryBlue</item>
     </style>
-    
+
     <style name="noActionBar" parent="Theme.ToDoApp">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Fab_Bottom_app_bar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ColorPrimaryBlue</item>
+        <item name="colorPrimaryVariant">@color/ColorPrimaryBlue</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="bottom_navigation_bg" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="android:background">@color/white</item>
     </style>
 </resources>

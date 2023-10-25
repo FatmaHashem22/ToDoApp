@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.todoapp.database.model.Todo
+import java.util.Date
 
 @Dao
 interface TodoDao {
@@ -21,4 +22,7 @@ interface TodoDao {
 
     @Query("SELECT * FROM TodoTable")
     fun getTodos() : List<Todo>
+
+    @Query("SELECT * FROM TodoTable WHERE date = :date")
+    fun getTodoByDate(date : Date) : List<Todo>
 }

@@ -20,6 +20,6 @@ data class Todo(
     val date : Date? = null,
 
     @ColumnInfo
-    val isDone : Boolean? = null
+    var isDone : Boolean? = null
 
-)
+):java.io.Serializable

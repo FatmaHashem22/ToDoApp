@@ -13,11 +13,13 @@
         android:theme="@style/Theme.ToDoApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.ToDoApp">
-        </activity>
+            android:name=".ui.theme.EditActivity"
+            android:theme="@style/noActionBar" />
         <activity
-            android:name=".Splash"
+            android:name=".ui.theme.MainActivity"
+            android:theme="@style/noActionBar"/>
+        <activity
+            android:name=".ui.theme.Splash"
             android:exported="true"
             android:theme="@style/noActionBar">
             <intent-filter>

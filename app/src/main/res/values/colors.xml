@@ -5,4 +5,6 @@
     <color name="ColorPrimaryBlueVariant">#3D74BA</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green">#61E757</color>
+    <color name="red">#EC4B4B</color>
 </resources>
